@@ -1,0 +1,162 @@
+Questions:
+    What is in-network aggregation?
+
+    What is link layer security?
+        The link-layer commonly referred to as the data link layer, is the physical interface between the host system
+        and the network hardware. It defines how data packets are to be formatted for transmission and routings. The data
+        link layer and its associated protocol govern the physical interface between the host computer and the network hardware.
+        the goal of this layer is to provide reliable communications between hosts connected on a network.
+
+    What is routing protocol?
+    What is an end-to-end security mechanism?
+    What is crippling attack?
+    What is the "Hidden terminal problem"?
+        The hidden node problem occurs when a node is visible form a wireless access point, but not form other nodes communicating
+        with that AP. This leads to difficulties in MAC sublayer.
+    What is the MAC (Media Access Control) layer?
+        The MAC layer is the lower sublayer of the data link layer of seven-layer OSI model. It provides addressing and channel
+        access control mechanism that make it possible for seversal terminals or network nodes to communicate within a multiple
+        access network that incorporates a shared medium.
+Why:
+    Current routing protocols in sensor networks are not design with security as a goal
+    insecure sensor networks wireless communication can be attacked by powerful laptops with
+    high energy and long range communication.
+
+Challenges:
+    In-network aggregation complicates the design of a secure routing protocol.
+    
+
+Base station: is a gate way to other networks. A powerful data processing and storage center.
+Aggregation point: is a chosen sensor node which collects sensor readings from surrounding nodes
+                   and then forward a message contains information from multiple nodes. It can be
+                   chosen dramatically.
+
+It is crucial to keep the radio in sleep mode the overwhelming majority of the time. To keep the power consumption down
+
+Sensor network is different from distributed systems. In sensor network, each node has limited 
+computing power, then we cannot use public key is expensive.
+    > 4k memory must be handled carefully.
+    > communication brandwidth is extremely dear, each bit transmitted consumes about as much power
+      as executing 800-1000 instructions.
+Therefore it must be designed with power in mind.
+
+
+Sensor networks vs. ad-hoc wireless networks
+    > sensor networks are different:
+        -> Many to one: multiple sensor nodes send senor readings to a base
+           station or aggregation point ion the network.
+        -> One-to-many: a single node (base station) multi-casts or floods a query or control
+           information to several sensor nodes.
+        -> Local communication: Neighboring nodes send localized messages to discover and coordinate
+           with each other. 
+        -> after a sensor node is deployed it is expected to function for a long time without being maintained.
+    > node in sensor network exhibits trust relationship.
+        -> In order to save energy, sensor networks require in-network processing aggregation and duplicate elimination.
+           this often necessitates trust relationships
+
+Sensor networks use wireless communications, then we assume the radio links are not secure. 
+    > Attackers can eavesdrop on our radio transmissions, inject bits in the channel, and replay the previously overheard packets.
+    > They can also deploy some malicious nodes or turning legit node into malicious nodes
+    > nodes are not tamper resistant. Tamper resistance add per-unit cost.
+    > MAC layer:
+        -> jam radio links by transmitting without stop or try to cause collisions by leveraging the "hidden terminal" problem.
+        -> for CTS/RTS frames adversaries can send frequent CTS frames with long duration fields, so other nodes cannot use the
+           channel.
+        -> MAC protocols using randomized backoff are susceptible to attack, if nodes have predictable pseduo-random number
+               generation. Adversaries are able to predict backoff times can cause long backoff times or collision.
+
+Threat Models 
+    > Model class attacker 
+        -> attackers have access to a few sensor nodes with similar capabilities to our own.
+    > laptop class attacker
+        -> attackers have access to powerful devices. 
+        -> therefore malicious nodes  are more powerful
+    > outside attacker
+    > inside  attacker
+
+Security goals:
+    > Confidentiality
+    > Integrity
+    > Authenticity
+    > Availability of all messages in the presence of resourceful adversaries.
+    > Every receiver should receive all messages intended for it and be able to verify the integrity of every message as well
+      as the identity of the sender.
+    > Adversaries should not be able to infer the content of any messages.Confidentiality
+    > Protection against the replay of data packets
+
+
+In sensor networks the traffic pattern is many to one, with many sensor node needing to communicate sensor readings or network
+events back to a central base station
+
+    for outside attacker
+        > link layer security can guarantee integrity, authenticity, and confidentiality. 
+        > we rely on routing protocol to guarantee availability
+
+    for inside attacker
+        > link layer security is not enough
+
+Attacks on sensor network routing: 
+    > Spoofed, altered, or replayed routing information
+        -> target the routing information exchanged between nodes
+        -> create routing loops, attack or repel networking traffic.
+        -> extend or shorten routes
+        -> generate false error messages
+        -> partition the network
+        -> increase the end-to-end latency
+
+    > selective forwarding
+        -> malicious nodes refuse to forward certain messages and drop them.
+        -> if an adversary is only interested in modifying packets, but reliably forward
+           the remaining packets, can limit the suspicion of her wrongdoing.
+        -> most effective when the attacker is explicitly included on the path of a data flow.
+        -> adversary will follow the path of least resistance and attempt to include herself
+           on the actual path of the data flow.
+
+    > Sinkhole attacks
+        -> lure all the traffic from an area through a compromised node
+        -> sinkhole attack can enable many other attacks. especially makes selective forwarding trivial 
+        -> sensor networks are vulnerable to sinkhole because they all share the same ultimate destination.
+        -> a compromised node needs only to provide a single high-quality route to the base station in
+           order to influence a potentially large number of nodes.
+
+    > Sybil attacks
+        -> a single node presents multiple identities to other nodes in the network
+        -> can reduce the effectiveness of fault-tolerant schemes.
+        -> pose a threat to geographic routing protocols by being in more than one place
+           at once.
+
+    > Warm-holes
+        -> an adversary tunnels messages received in one part of the network over a low-latency link
+           and replays them in a different part. 
+        -> having a malicious node sitting between two normal nodes and forward messages between them
+        -> A well located wormhole node close to a base station can completely disrupt routing
+        -> it can create sinkhole by convincing other nodes that there is a short route.
+        -> use to exploit routing race conditions.
+        -> likely to be used in combination with selective forwarding or eavesdropping
+        -> detection is hard when used in conjunction with the Sybil attack
+    > HELLO flood attacks
+        -> a laptop class attacker with large transmission power can convince every node in the network could
+           convince every node that the attack is their neighbor.
+    > acknowledgement spoofing.
+        -> adversary can spoof link layer acknowledgments for "overhead" packets addressed to neighboring nodes
+        -> can convince the sender that a weak link is strong and a dead or disabled node is alive.
+        -> can be used combined with selective forwarding
+
+Attacks on specific sensor network protocols
+    > TinyOS beaconing
+        -> since the routing updates are not authenticated, it is possible for any node to claim to be a base
+           station and become the destination of all traffic in the network
+    > Directed diffusion
+        -> It is a data-centric routing algorithm for drawing information out of a sensor network.
+            --> base station flows interests for named data.
+            --> nodes has what dase station wants sends back the data.
+        -> attack has following goals:
+            --> suppression
+            --> cloning, make it self a base station
+            --> Path influence
+    > Geographic routing
+        -> route each packet to the neighbor closest to the destination.
+            --> Path influence
+        -> location information can be misrepresented. 
+        -> adversary maximize her chances for placing herself on the path of any nearby data.
+        -> 
