@@ -1,0 +1,73 @@
+
+
+
+    This article mainly introduces two architectures or frameworks that are trying to standardize the world
+of internet of things. Also, at the end of this article, it also introduces a security framework respects to
+to one of the framework introduced in the article. Also this text take a lot of efforts elabrating the importance 
+of internet of things, but those will not appear in this review. Since both of us understands the significance
+of IoTs.
+
+    There are tree reasons of why an IoT architecture can be beneificial.   
+        > It offers network manager a view of completeness and a checklist of evaluation of the functionalities.
+        > It provides guidance to developers as to which functions are needed in an IoT and how they work
+          together.
+        > It can serve as a framework of standardization.
+
+    The first framework, ITU-T IoT Reference Model, is developed by ITU-T (Telecommunication Standardization Sector 
+of the International Telecommunication Union). It goes into details of physical components of the IoT ecosystem. An 
+important note to this model is that "the IoT is in fact not a network of physical things, rather it is a network 
+that drives physical things, together with application platforms." But before understanding this model, we need to 
+look at how this model defines each component.
+
+        > Communication Network: infrastructure network connects devices and apps.
+
+        > Thing: an object that is capable of being identified and integrated into communication networks.
+
+        > Device: an equipment with mandatory capability of communication and optional capabilities of sensing data.
+            -> Data-capturing Device: A reader or writer that interacts with physical things, interaction happen indirectly 
+               via data carrying devices. 
+          +-
+          | -> Data-carrying Device: A device attached to a physical things to indirectly connect to the physical thing 
+          |    like a RFID tags.
+          |
+          | -> Data carrier: Battery free data carrying objects attacjed to a physical thing can provide information to a 
+          |    suitable data capturing device. like QR code or bar code.
+          |
+          |    Note* Data-carrying device and data carrier devices are different in this model. The former has as the
+          |          capability of communication, but the latter is just like a physical tag, say QR code
+          +-
+
+        > Sensors
+
+        > Actuating device: A device converts digital electronic signals from the information networks into operations
+        
+        > General Device: A device has embedded processing unit and communication capabilities, like smartphones.
+        
+        > Gateway: A unit in the IoT that interconnects the device with the communication networks as a protocol translator
+            -> It supports a variety of device access technologies (protocal translation)
+            -> It supports necessary netwokring technologies for both local and wide-area networking (protocal translation)
+            -> It supports interaction with applications, provides higher-level functionaloty on behalf of IoT devices
+
+        Also radio frequency, infrared, optical, and galvanic driving are used for interaction between data capturing device 
+        and data-carrying device, 
+        
+        * "An example is implanted medical devices that use the conductive properties of the body. In implant-to-surface 
+          communication, galvanic coupling sends signals from an implanted device to electrodes on the skin. This scheme uses 
+          very little power and reduces the size and complexity of the implanted device."
+        
+        Below is a general view of all the components together.
+
+        TODO: insert figure 2
+
+        Below is a technical overview of the ITU-T IoT system.
+        
+        TODO: insert figure 3
+
+    This model also illustrates three possibilities of communication among devices:
+        > communication via gateway
+        > using communication network without the gateway
+        > communicate directly with each other through a local network
+
+
+
+
