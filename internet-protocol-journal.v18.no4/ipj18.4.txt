@@ -39,3 +39,64 @@ Challenges:
     > existing internet protocols are not optimal in this case
     > mis-match between data generating rate and few data storage
       locations with slow data update rate.
+
+Two efforts developing overall frameworks
+-----------------------------------------
+
+ITU-T Reference Model
+=====================
+    > An IoT Architecture is needed
+        -> provides a checklist of evaluation
+        -> provides guidance to developers
+        -> serve as a framework for standardization
+
+    > it details the physical componenets of IoT ecosystem
+    > IoT is not a network of physical things, it is a network of devices that interacts with physical things
+
+    > Terminologies:
+        -> Communication Network: infrastructure network connects devices and apps
+        -> Thing: an object that is capable of being identified and integrated into communication networks
+        -> Device: Mandatory capability of communication and optional capabilities of sensing.
+        -> Data-carrying Device: A device attached to a physical things to indirectedly connect the physical thing (RFID tags)
+        -> Data-capturing Device: Reader or writer that interacts with physical things, interaction happen indirectly via data carrying devices
+        -> Data carrier: Battery free data carrying objects attacjed to a physical thing can provide information to a suiable data capturing
+           device. like (QR code)
+        -> Sensoring device: sensor
+        -> General Device: embedded processing and communication capabilities. like smartphones
+        -> Gateway: A unit in the Iot that interconnects the device with the communication networks as a protocol translator
+            * support a variety of device access technologies (protocal translation)
+            * supports necessary netwokring technologies for both local and wide-area networking (protocal translation)
+            * supports interaction with applications, provides higher-level functionaloty on behalf of IoT devices
+        
+        
+    > technologies between data carrying / capturing / carrier devices:
+        -> Radio Frequency (RFID)
+        -> Infrared (Infrared badges)
+        -> Optical (Bar code and QR code)
+        -> Galvanic Driving
+
+    > layers
+        -> Application layer
+            * all apps interact with IoT devices
+        -> Service Support and Application support layer
+            * capabilities application use such as common data processing 
+        -> Network layer
+            * interconnection of devices and gateways 
+            * Transport of IoT service and application specific information
+        -> Device layer
+        -> Management Capabilities Layer
+            * traditional network oriented management functions 
+            * Device Management
+            * Local Netowkr Topology Management
+            * Traffic and Congestion Management 
+
+        -> Security Capabilities Layer
+            * generic security capabilities that are independent of applications
+            
+            * Application layer
+            * Network layer
+            * Device layer
+
+
+IoT World Forum Reference Model
+===============================
