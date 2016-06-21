@@ -100,3 +100,94 @@ ITU-T Reference Model
 
 IoT World Forum Reference Model
 ===============================
+It focuses on device and gateway level with only a broad description of upper layers, it is mostly concerned with the broader issue
+of developing the applications, middleware, and support functions for an enterprise based IoT.
+
+It has the following characteristics:
+    > Simplifies: breaks down the complex system
+    > Clarifies: precisely identify levels of the IoT.
+    > Identifies: id which type of processing is optimized
+    > Standardized: common interface and industrial standards
+    > Organize: makes IoT approachable
+
+Seven Levels:
+    > Level 1: Physical devices (Sensors, devices)
+        -> Enables devices to communicate with each other some time via uppper logic level (Such as smartphones and other remote control devices)
+        
+    > Level 2: Connectivity (Communication and Processing Units)
+        -> in this level the gateway in ITU-T is placed here
+        -> It is desirable to do as much processing close to the sensors as possible
+        -> data preprocessing, thus the burden of higher level processing unit can be shared
+            * Evaluation: see if the data should be processed to higher level
+            * Formatting
+            * Expanding / decoding: handling crptic data 
+            * Reduction: summarizing data to minimize the impact of data and traffic on the network and higher-level processing systems
+            * Assessment: redirecting data to additional destinations
+
+    > Level 3: fog computing (流水生产线)
+        -> distinguished characteristic of IoT
+        -> Massive numbers of individual smart objects are interconnected with fog network facilities that provied processing and storage resources close
+           to the edge devices in an IoT.
+        -> Fog computing addresses the challenges raised by the activity of thousands or millions of smart devices, including security, privacy, 
+           network-capacity constraints, and latency requirements.
+
+    > Level 4: Data accumulation level
+        -> place data coming fog computing devices in storage ofr higher levels
+        -> application can only process data at rest, not data in motion
+        -> data stored are not application specific
+        -> Operations
+            * convert data in motion to data at rest
+            * convert format from network packets to database
+            * Achieves transition from event based to query based computing
+            * Dramatically reduces data through filtering and selective storing
+        -> a boundary between Informational Technology (IT) and Operational Technology (OT) 
+
+    > Level 5: Data abstraction
+        -> formats data that makes easy for application to access
+        -> Tasks including:
+            * Combining data from difference sources
+            * Conversion
+            * Put formated data in a application specific data base
+            * Alerting higher-level application the data storage is full
+            * consolidating data into one place
+            * data protection
+            * indexing data for fast application access
+
+    > Level 6: Application level
+
+    > Level 7: Collaboration and processes level
+        -> multiple application, exchange of data and control information across the Internet
+
+
+An IoT Security Framework for World Forum IoT Reference Model
+-------------------------------------------------------------
+    > Role-Based Security: Role-Based Access Control(RBAC)
+        -> system assign access rights to roles
+
+    > Anti-tamper and Detection
+        -> important at device and fog network level
+
+    > Data protection and confidentiality
+        -> extends to all levels
+
+    > Internet Protocol Protection
+        -> Protection of data in motion from eavesdropping and snooping is essential between all levels
+
+
+    > components of a security facility
+        -> Autentication
+            * identifying the IoT devices without human interaction, such as RFID, MAC address of the endpoint
+
+        -> Authorization
+            * establishes the necessary parameters to enable the exchange of information between devices and 
+              between devices and application platforms
+
+        -> Network Enforced Policy
+            * All elements that route or transport endpoint traffic
+
+        -> Secire Analytics, including Visibility and Control
+            * central management of IoT devices
+            * securely aware of all the exsitence of distributed IoT devices
+            * control, config, and update them.
+
+    Trust relationship
