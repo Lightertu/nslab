@@ -109,6 +109,7 @@ Attacks on sensor network routing:
         -> if an adversary is only interested in modifying packets, but reliably forward
            the remaining packets, can limit the suspicion of her wrongdoing.
         -> most effective when the attacker is explicitly included on the path of a data flow.
+        -> an adversary overhears a flow passes through a neighbor node, it can emulate selective forwarding
         -> adversary will follow the path of least resistance and attempt to include herself
            on the actual path of the data flow.
 
@@ -116,8 +117,12 @@ Attacks on sensor network routing:
         -> lure all the traffic from an area through a compromised node
         -> sinkhole attack can enable many other attacks. especially makes selective forwarding trivial 
         -> sensor networks are vulnerable to sinkhole because they all share the same ultimate destination.
+        -> it works by making the compromised node look so attractive to other nodes in the preference of
+           their routing algorithm. Laptop class can provide a high-quality route, because they have
+           enough transmitting power to the base station.
         -> a compromised node needs only to provide a single high-quality route to the base station in
            order to influence a potentially large number of nodes.
+        -> sensor networks are very vulnerable to sink hole attacks because every node goes to a final destination
 
     > Sybil attacks
         -> a single node presents multiple identities to other nodes in the network
@@ -131,12 +136,16 @@ Attacks on sensor network routing:
         -> having a malicious node sitting between two normal nodes and forward messages between them
         -> A well located wormhole node close to a base station can completely disrupt routing
         -> it can create sinkhole by convincing other nodes that there is a short route.
-        -> use to exploit routing race conditions.
+        -> use to exploit routing race conditions. By delivering messages way faster than it should be.
         -> likely to be used in combination with selective forwarding or eavesdropping
         -> detection is hard when used in conjunction with the Sybil attack
+
     > HELLO flood attacks
+        -> many protocols require nodes to broadcast HELLO packets to announce themselves to their neighbors, and a node
+           receives that packet will assume the sender is within its radio range.
         -> a laptop class attacker with large transmission power can convince every node in the network could
            convince every node that the attack is their neighbor.
+
     > acknowledgement spoofing.
         -> adversary can spoof link layer acknowledgments for "overhead" packets addressed to neighboring nodes
         -> can convince the sender that a weak link is strong and a dead or disabled node is alive.
@@ -146,6 +155,7 @@ Attacks on specific sensor network protocols
     > TinyOS beaconing
         -> since the routing updates are not authenticated, it is possible for any node to claim to be a base
            station and become the destination of all traffic in the network
+
     > Directed diffusion
         -> It is a data-centric routing algorithm for drawing information out of a sensor network.
             --> base station flows interests for named data.
@@ -154,6 +164,7 @@ Attacks on specific sensor network protocols
             --> suppression
             --> cloning, make it self a base station
             --> Path influence
+
     > Geographic routing
         -> route each packet to the neighbor closest to the destination.
             --> Path influence

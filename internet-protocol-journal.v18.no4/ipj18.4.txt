@@ -1,0 +1,41 @@
+Pervasive Computing (Ubiquitous Computing): embedding microprocessors in everyday objects so they can communicate infomation.
+-------------------------------------------------------------------------
+
+Why internet of things?
+-----------------------
+Net profit for internet economy in next decade is $14.4 trillion.
+
+Five main drivers of IoT economy:
+    > Asset use: Iot reduces selling and administrative expense and 
+      cost of goods by improving business process execution and capital
+      efficiency.
+    > Employee productivity: more productive man-hours.
+    > Supply chain: eliminating waste and improving process efficiencies
+    > Customer experience: creating customer life-time value and grows 
+      market share by adding more customers.
+    > Innovation (less effort on marketing): increase return on R&D
+      investments, reduces time to market, creates additional revenue 
+      streams from new business models and opportunities.
+
+Scope of IoTs
+-------------
+ITU-T gives the following definitions
+    > IoT:
+    > Things: object capable of being identified na dintegrated into
+      communication networks
+    > Device: mandatory capability of communication and optional
+      capabilities of sensing, actuation, data capture, data storage,
+      and data processing.
+
+Other Definitions:
+    > contains a micro-controller to provide intellgence.
+    > contains sensor(s)
+    > Provide means of communication 
+    > be able to identified (id tag)
+
+Challenges:
+    > energy resource constrain
+    > frequent data exchange over loss networks
+    > existing internet protocols are not optimal in this case
+    > mis-match between data generating rate and few data storage
+      locations with slow data update rate.
