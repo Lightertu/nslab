@@ -1,6 +1,4 @@
 
-
-
     This article mainly introduces two architectures or frameworks that are trying to standardize the world
 of internet of things. Also, at the end of this article, it also introduces a security framework respects to
 to one of the framework introduced in the article. Also this text take a lot of efforts elabrating the importance 
@@ -66,7 +64,66 @@ look at how this model defines each component.
     This model also illustrates three possibilities of communication among devices:
         > communication via gateway
         > using communication network without the gateway
-        > communicate directly with each other through a local network
+        > communicate directly with each other through a local network (sensor network)
+
+        Below is a figure of networking layers, very similar to OSI layers
+
+        TODO: insert figure 4
+        
+
+    General layers
+        > Application layer: all apps interacts with IO devices
+        > Service Support and Application Support layer: provides capabilities that applications use
+        > Network layer: 
+            -> networking capabilities: interconnection of devices and gateways
+            -> transport capabilities:  correspond to OSI network transport layers
+
+    Security Layer Around general layers
+        > Application Layer: 
+            -> authorization 
+            -> authentication 
+            -> application 
+            -> data confidentiality 
+            -> integrity 
+            -> protection 
+            -> privacy protection
+            -> security 
+            -> anti-virus.
+
+        > Network Layer: 
+            -> authorization 
+            -> authentication 
+            -> user data
+            -> confidentiality 
+            -> signaling 
+            -> integrity protection.
+
+        > Device Layer: 
+            -> authentication 
+            -> authorization 
+            -> device integrity 
+            -> validation 
+            -> access control
+            -> data confidentiality and integrity 
+            -> protection
+
+    Specific security capabilities relate to specific application require- ments, such as mobile payment security requirements.kkkk
+    
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
