@@ -69,10 +69,9 @@ look at how this model defines each component.
         Below is a figure of networking layers, very similar to OSI layers
 
         TODO: insert figure 4
-        
 
     General layers
-        > Application layer: all apps interacts with IO devices
+        > Application layer: all apps interacts with IoT devices.
         > Service Support and Application Support layer: provides capabilities that applications use
         > Network layer: 
             -> networking capabilities: interconnection of devices and gateways
@@ -107,9 +106,71 @@ look at how this model defines each component.
             -> data confidentiality and integrity 
             -> protection
 
-    Specific security capabilities relate to specific application require- ments, such as mobile payment security requirements.kkkk
-    
+   The second framework / model is IoT World Form Reference Model, in the latter text we refer it as IWF. This model 
+is developed by IoT World Forum. If ITU-T focuses on device level, then this one is emphasized on an overall big picture.
+According to Cisco, the party contributed to developing this model, IWF has the following characteristics.
+    > Simplifies each complex part of the system.
+    > Clarifies common terminology
+    > Identifies types of processing are to be optimized
+    > Standardizes IoT products that work with each other
 
+It contains seven different levels (from top down) 
+    > Level 1: Physical devices (Sensors, devices)
+        -> Enables devices to communicate with each other some time via uppper logic level (Such as smartphones and 
+           other remote control devices).
+        
+    > Level 2: Connectivity (Communication and Processing Units)
+        -> In this level the gateway in ITU-T is placed here.
+        -> It is desirable to do as much processing close to the sensors as possible.
+        -> Data preprocessing, thus the burden of higher level processing unit can be shared.
+            * Evaluation: see if the data should be processed to higher level.
+            * Formatting data.
+            * Expanding / decoding: handling encrypted data.
+            * Reduction: summarizing data to minimize the impact of data and traffic on the network and higher-level 
+              processing systems.
+            * Assessment: redirecting data to additional destinations.
+
+    > Level 3: fog computing (流水processing)
+        -> Distinguished characteristic of IoT from cloud computing.
+        -> Massive numbers of individual smart objects are interconnected with fog network facilities that provides 
+           processing and storage resources close to the edge devices in an IoT.
+        -> Fog computing addresses the challenges raised by the activity of thousands or millions of smart devices, 
+           including security, privacy, network-capacity constraints, and latency requirements.
+
+    > Level 4: Data accumulation level
+        -> Place data coming from fog computing devices in storage for higher levels.
+        -> Application can only process data at rest, not data in motion.
+        -> Data stored are not application specific.
+        -> Operations
+            * Convert data in motion to data at rest.
+            * Convert format from network packets to database.
+            * Achieves transition from event based to query based computing.
+            * Dramatically reduces data through filtering and selective storing.
+        -> A boundary between Informational Technology (IT) and Operational Technology (OT).  
+    > Level 5: Data abstraction
+        -> formats data that makes easy for application to access
+        -> Tasks including:
+            * Combining data from difference sources.
+            * Conversion.
+            * Put formatted data in a application specific data base.
+            * Alerting higher-level application the data storage is full.
+            * Consolidating data into one place.
+            * Data protection.
+            * Indexing data for fast application access.
+
+    > Level 6: Application level
+        -> Interacts with level 5 and data at rest.
+    > Level 7: Collaboration and processes level
+        -> multiple application, exchange of data and control information across the Internet
+
+    The diagram below shows the layer out all the layers.
+
+    TODO: Figure 5
+
+    At the end of this paper, it introduces a security framework developed by Cisco respects to the IWF model
+in the previous section. However the IWF model used in the security framework is simplified to contain only
+4 levels, they are Smart Object, Fog Network, Core Network, and Data Center. 
+        
 
     
 
