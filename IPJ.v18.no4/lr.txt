@@ -1,13 +1,12 @@
 
-    This article mainly introduces two architectures or frameworks that are trying to standardize the world
-of internet of things. Also, at the end of this article, it also introduces a security framework respects to
-to one of the framework introduced in the article. Also this text take a lot of efforts elabrating the importance 
-of internet of things, but those will not appear in this review. Since both of us understands the significance
-of IoTs.
+    This article mainly introduces two architectures / frameworks that are trying to standardize the world
+of internet of things. At the end of this article, it introduces a security framework respects to one of 
+the frameworks. Also this text takes a lot of efforts elaborating the importance of internet of things, but 
+those will not appear in this review. Since both of us understands the significance of IoTs.
 
-    There are tree reasons of why an IoT architecture can be beneificial.   
+    There are tree reasons of why having an IoT architecture can be beneficial.   
         > It offers network manager a view of completeness and a checklist of evaluation of the functionalities.
-        > It provides guidance to developers as to which functions are needed in an IoT and how they work
+        > It provides guidance to developers as to which functions are needed in an IoT network and how they work
           together.
         > It can serve as a framework of standardization.
 
@@ -22,14 +21,14 @@ look at how this model defines each component.
         > Thing: an object that is capable of being identified and integrated into communication networks.
 
         > Device: an equipment with mandatory capability of communication and optional capabilities of sensing data.
-            -> Data-capturing Device: A reader or writer that interacts with physical things, interaction happen indirectly 
+            -> Data-capturing Device: A reader or writer that interacts with physical things, interaction happens indirectly 
                via data carrying devices. 
           +-
-          | -> Data-carrying Device: A device attached to a physical things to indirectly connect to the physical thing 
+          | -> Data-carrying Device: A device attached to a physical things to indirectly connect to the physical thing,
           |    like a RFID tags.
           |
-          | -> Data carrier: Battery free data carrying objects attacjed to a physical thing can provide information to a 
-          |    suitable data capturing device. like QR code or bar code.
+          | -> Data carrier: Battery free data carrying objects attach to a physical thing can provide information to a 
+          |    suitable data capturing device. Like QR code or bar code.
           |
           |    Note* Data-carrying device and data carrier devices are different in this model. The former has as the
           |          capability of communication, but the latter is just like a physical tag, say QR code
@@ -39,12 +38,12 @@ look at how this model defines each component.
 
         > Actuating device: A device converts digital electronic signals from the information networks into operations
         
-        > General Device: A device has embedded processing unit and communication capabilities, like smartphones.
+        > General Device: A device has embedded processing unit and communication capabilities, like smartphones, or base station.
         
         > Gateway: A unit in the IoT that interconnects the device with the communication networks as a protocol translator
-            -> It supports a variety of device access technologies (protocal translation)
-            -> It supports necessary netwokring technologies for both local and wide-area networking (protocal translation)
-            -> It supports interaction with applications, provides higher-level functionaloty on behalf of IoT devices
+            -> It supports a variety of device access technologies (protocol translation).
+            -> It supports necessary networking technologies for both local and wide-area networking (protocol translation).
+            -> It supports interaction with applications providining higher-level functionality on behalf of IoT devices.
 
         Also radio frequency, infrared, optical, and galvanic driving are used for interaction between data capturing device 
         and data-carrying device, 
@@ -70,14 +69,15 @@ look at how this model defines each component.
 
         TODO: insert figure 4
 
-    General layers
+    In this model there are 4 General layers, along with a security layer.
         > Application layer: all apps interacts with IoT devices.
         > Service Support and Application Support layer: provides capabilities that applications use
         > Network layer: 
             -> networking capabilities: interconnection of devices and gateways
             -> transport capabilities:  correspond to OSI network transport layers
+        > device layer
 
-    Security Layer Around general layers
+    The Security Capabilities Layer includes generic security capabilities that are independent of applications.
         > Application Layer: 
             -> authorization 
             -> authentication 
@@ -106,9 +106,11 @@ look at how this model defines each component.
             -> data confidentiality and integrity 
             -> protection
 
-   The second framework / model is IoT World Form Reference Model, in the latter text we refer it as IWF. This model 
-is developed by IoT World Forum. If ITU-T focuses on device level, then this one is emphasized on an overall big picture.
-According to Cisco, the party contributed to developing this model, IWF has the following characteristics.
+   The second framework IoT World Form Reference Model, in the latter text we refer it as IWF. This model 
+is developed by IoT World Forum. If ITU-T focuses on device level, then this one is emphasized on an overall 
+big picture. According to Cisco, the party contributed to developing this model, IWF has the following 
+characteristics.
+
     > Simplifies each complex part of the system.
     > Clarifies common terminology
     > Identifies types of processing are to be optimized
@@ -116,7 +118,7 @@ According to Cisco, the party contributed to developing this model, IWF has the 
 
 It contains seven different levels (from top down) 
     > Level 1: Physical devices (Sensors, devices)
-        -> Enables devices to communicate with each other some time via uppper logic level (Such as smartphones and 
+        -> Enables devices to communicate with each other some time via upper logic level (Such as smartphones and 
            other remote control devices).
         
     > Level 2: Connectivity (Communication and Processing Units)
@@ -130,7 +132,7 @@ It contains seven different levels (from top down)
               processing systems.
             * Assessment: redirecting data to additional destinations.
 
-    > Level 3: fog computing (流水processing)
+    > Level 3: fog computing (流水线processing)
         -> Distinguished characteristic of IoT from cloud computing.
         -> Massive numbers of individual smart objects are interconnected with fog network facilities that provides 
            processing and storage resources close to the edge devices in an IoT.
@@ -169,23 +171,64 @@ It contains seven different levels (from top down)
 
     At the end of this paper, it introduces a security framework developed by Cisco respects to the IWF model
 in the previous section. However the IWF model used in the security framework is simplified to contain only
-4 levels, they are Smart Object, Fog Network, Core Network, and Data Center. 
+4 levels, they are 
+    > Smart Object
+        -> "This part of an IoT is the most vulnerable part. The devices may not be in a physically secure 
+           environment and may need to function for years. Availability is certainly of concern. Also network 
+           managers need to be concerned about the authenticity and integrity of the data generated by sensors 
+           and about protecting actuators and other smart devices from unauthorized use. Privacy and
+           protection from eavesdropping may also be requirements."
+
+    > Fog Network
+        -> "This level is concerned with the wired and wireless interconnection of IoT devices. In addition, a certain 
+           amount of data processing and consolidation may be done at this level. A key concern is the wide 
+           variety of network technologies and protocols that the various IoT devices use and the need to 
+           develop and enforce a uniform security policy."
+
+    > Core Network
+        -> "The core network level provides data paths between network center platforms and the IoT devices. The security 
+           issues here are those confronted in traditional core networks. However, the vast number of endpoints 
+           to interact with and manage creates a substantial security burden."
+
+    > Data Center
+        -> "This level contains the application, data storage, and network management platforms. IoT does not introduce 
+           any new security issues at this level, other than the necessity of dealing with huge numbers of individual 
+           endpoints."
+
+    Given these 4 layers, Cisco defines security capabilities across multiple layers. (See figure 7)
+
+    > Role-Based Security: 
+        -> Role-Based Access Control (RBAC) systems assigns access rights to roles instead of individual users. 
+           In turn, users are assigned to different roles, either statically or dynamically.
+
+    > Anti-tamper and Detection: 
+        -> Across device and fog network levels but also extends to the core network level. All of these levels may 
+           involve components that are physically outside the area of the enterprise that is protected by physical 
+           security measures.
+
+    > Data Protection and Confidentiality: These functions extend to all levels of the architecture.
+
+    > Internet Protocol Protection: Protection of data in motion from eavesdropping and snooping is essential 
+      between all levels.
         
+   Now we know the security capabilities of each level, however, we also needs to know each components of a 
+   security facility that across multiple levels. In total, there are 4 components for each facility.
+        -> Authentication
+            * identifying the IoT devices without human interaction, such as RFID, MAC address of the endpoint
 
-    
+        -> Authorization
+            * establishes the necessary parameters to enable the exchange of information between devices and 
+              between devices and application platforms
+
+        -> Network Enforced Policy
+            * All elements that route or transport endpoint traffic
+
+        -> Security Analytics, including Visibility and Control
+            * central management of IoT devices
+            * securely aware of all the existence of distributed IoT devices
+            * control, configure, and update them.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    To conclude, IoT is the future, however, there is no standard framework to regulate the IoT world yet, but
+many organizations and people are trying to define it. Security is a huge problem comes with IoT, there are a
+decent among of questions need to be answered, thus it is worthy researching for IoT security solutions.
