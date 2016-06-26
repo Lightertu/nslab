@@ -1,0 +1,63 @@
+The key challenge in addressing these attacks stems from the difficulty of modifying or replacing already-implanted IMDs.
+Adding cryotigraphy directly to IMDs is hard because of the following reasons
+    > Inalterability  
+    > Safety
+        -> Every legit medical person should have immediate access to IMD
+    > Maintainability
+        -> Devices cannot be recalled
+
+The Shield
+    > The shield acts as a gateway between IMD and potential counter parties
+    > uses cryptographic channel to communicate with authorized endpoints
+    > adversarial actions it can handle
+        -> passive eavesdropping (confidentiality)
+            * sending out jamming signal while receiving from IMDs
+        -> active unauthorized radio command transmission 
+            * listens for unauthorized transmissions addressing the IMD and jams them
+    > full-dupldex radio to receive and transmit the same time
+        -> "In particular, state-of-the-art design for full-duplex radios exploits the 
+           property that a signal reverses its phase every half a wavelength; it 
+           transmits the same signal from two antennas and puts a receive antenna 
+           exactly half a wavelength closer to one of the transmit antennas than 
+           the other."
+        -> can be prototyped using a software radio
+    > additional desire feature
+        -> can detect adversaries who try to alter the shield's signal to convey
+           unnauthorized massages to the IMD.
+        -> ensure that it stops jamming the medium when an adversarial signal ends
+    
+Thread Model:
+    > Passive eavedropper
+        It has the following properties
+        -> may try different decoding strategies 
+        -> may consider jamming as noise and decode during jamming
+        -> may implement interference cancellation
+        -> joint decoding
+
+        However basic results in multi-user information theory show that decoding 
+        multiple signals is impossible if the total information rate is outside the 
+        capacity region.
+
+        -> may use standard or custom-built equipment to seperate jamming signal
+           from IMD's signal. 
+
+        However, if shield is located less than a half wavelength from the IMD, it won't
+        work
+
+        -> adversary may be in any location farther away from IMD
+
+    > Active Adversary
+        sends unauthorized ra- dio commands to the IMD, it has the following properties:
+        -> several approaches to send commands
+            * generate its own unauthorized messages
+            * record messages from other source and replay them
+            * alter authroized messages
+        -> different hardware
+            * modified high transmission power commercial IMD programmer 
+
+System Overview
+    Key to the shield’s role is its ability to act as a jammer-cum-receiver, which enables 
+    it to jam the IMD’s transmissions and prevent others from decoding them, while still 
+    being able to decode them itself.
+
+    
