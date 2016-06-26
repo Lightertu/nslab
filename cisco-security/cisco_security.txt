@@ -55,4 +55,16 @@ Security Challenges:
     > Tamper detection techniques and design
 
 
-Each IoT devices can have multiple ownership
+Each IoT devices can have multiple ownership, device will be required to have equal and
+open access to a number of data consumers and controllers concurrently, while still
+retaining and exclusivity of data. Thus we must establish identity control and trust
+relationships between entities to share the right information.
+
+There are complex security requirements to be deployed with potentially limited resources
+    > Authenticate to multiple networks securely
+    > Ensure that data is available to multiple collectors
+    > Manage the contention between that data access
+    > Manage privacy concerns between multiplle consumers
+    > Provide strong authentication and data protection
+    > maintain availability of data or the service
+    > allow for evolution in the face of unknown risks
