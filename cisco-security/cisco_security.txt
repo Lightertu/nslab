@@ -1,0 +1,58 @@
+IoT system is a distributed intelligence system
+    > Data collection:
+        -> centralized data collection and smart object management does not
+           provide the scalability required by the Internet.
+    > Network Resource Preservation:
+        -> branchwidth is limited, and collecting environmental data from a 
+           central point leads to using a large amount of network capacity.
+    > Close loop functiioning:
+        -> sending to centralized system before sending an order to an actuator
+           is slow.
+
+ 
+ Fog computing is ideal for IoT.
+
+ Brains of IoT:
+    > Service Management System
+    > Network Management System
+    > backend System
+
+Growth of IoT:
+    > Shifting from consumer based IPv4 (Information Technology) to 
+      IPv6 Operational Technology, Machine to Machine interactions.
+    > main drivers contribute to the growth of IoT
+        -> Ubiquitous Computing
+        -> Ubiquitous use of IP
+        -> Ubiquitous Connectivity
+
+IoT Protocols:
+    Protocols have been designed with energy preservation in mind, along with
+    low computing and memory requirements.
+
+    IPv6 is the major enabler of IoT, therefore security considerations and 
+    implications of IPv6 are funcamental to securing the IoT
+
+Security Challenges:
+    > inexpensive devices with no physical security
+    > low computing power devices may not support complex and evolving security
+      algorithms
+    > No backup connectivity
+    > Mostly installed prior to network availability which increases the overall on-boarding time
+    > Requires secure remote management during and after onboarding
+    > Scalability and management of billions of entities in the IoT ecosystem
+    > identification of endpoints in a scalable manner
+        -> individual 
+        -> group
+        -> scalability
+        -> scalability challenges of individual vs group
+        -> Sometimes the location may be more important than the individual identifier (ID)
+    > Management of Multi-party Networks 
+        -> who has provisioning access?
+        -> who accepts liability
+    > Crypto Resilience
+        -> smart meters could last beyond 40 years, which is longer than its algorithm lifetime
+    > Physical Protection
+    > Tamper detection techniques and design
+
+
+Each IoT devices can have multiple ownership
