@@ -68,3 +68,8 @@ There are complex security requirements to be deployed with potentially limited 
     > Provide strong authentication and data protection
     > maintain availability of data or the service
     > allow for evolution in the face of unknown risks
+
+Different layers
+    > Embedded System
+        -> inexpensive
+
