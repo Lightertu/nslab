@@ -71,5 +71,41 @@ There are complex security requirements to be deployed with potentially limited 
 
 Different layers
     > Embedded System
-        -> inexpensive
+        -> authenticity of data must be ensured, the path from sensor to the collector
+           cannot be compromised
+    > Multi-service Edge Layer
+        -> must support different protocols to accommodate a variety of endpoints
+        -> many endpoints use insecure protocols
 
+Core Network Layer
+    > Security services protects the system from the following threat:
+        -> Man in the middle 
+        -> Impersonation
+        -> Confidentiality compromise
+        -> Replay attack
+
+Data Center Cloud Layer
+    > The following attack can happen
+        -> Denial of Service
+            * making a resource unavailable (Radio jammer can carry out the attack)
+        -> endpoint exploitation
+
+IoT Threads:
+    Comparing to traditional internet the attacks threat moves from manipulating to
+    controlling devices, also many OS are moving from closed system to IP based 
+    system, therefore attack surfaces are expanded.
+    
+    can be affected by the following
+        > worms jumping
+        > Script kiddies
+        > organized crime 
+        > Cyber terrorism
+
+Security in IoT/M2M
+    > mechaisms to authenticate device identity needs to be re-engineered to suit IoT's
+      low computing power nature
+    > New authentication schemes needs to be built
+
+Privacy
+    > Many applications generate traceable signatures of location and behavior of
+      individuals
