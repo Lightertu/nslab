@@ -1,0 +1,28 @@
+How do we connect networks with different maxium packet size
+
+Packet size problem
+    > Different networks have different maximum packet sizes
+    > refer large packet for efficiency
+
+Packet Size Solutions:
+    > Fragmentation (now)
+        -> router fragment packets that are two large
+        -> Receiving host reassembles to reduce load on router
+        -> Fragmentation Fields:
+            * identification
+            * Total Length
+            * Fragment offset
+            * some control bits (MF-> more fragments, DF-> don't fragment)
+    > Discovery (Next)
+
+Fragmentation Procedure
+    > Router split a packet that is too large
+        -> Typically break into large pieces
+        -> Copy IP header to pieces
+        -> Adjust length on pieces
+        -> Set offset to indicate position 
+        -> Set MF on all pieces except last
+
+    > Receiving host reseesmbles the pieces:
+        -> identification field links pieces together,
+           MF tell receiver if it has all the pieces

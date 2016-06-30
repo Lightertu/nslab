@@ -1,0 +1,198 @@
+
+. Introduction
+---------------
+    IoT definition:
+        > The resulting global network interconnecting smart objects by means of extended Internet technologies.
+        > The set of supporting technologies necessary to realize such a vision.
+        > The ensemble of applications and services leveraging such technologies to open new business and market
+          oppotunities.
+
+    Research Satuation:
+        > The IoT research community is fragmented, folks are focusing on specific applications and technology, but the
+          networking and communication scientific communities are limited. This is potentially harmful 
+
+    Smart Objects:
+        > Unique identifier
+        > Unique address
+        > Communication capabilities
+        > Processing capabilities
+    
+    Characteristics:
+        > Anything communicates
+        > Anything is identified
+        > Anything interacts
+
+2. Vision and Concept
+---------------
+    System Level Perspective:
+        > may not have a full protocol stack
+        > may not apply end-to-end principle
+        > Computation is done through fog computing, not cloud
+        > scalability is a challenge, how 
+        > high level of dynamism in the network, devices can move and create
+          hoc connections with nearby ones. Self-management and automatic
+          capabilities are required.
+
+    Service Level Perspective:
+        > how to create service out of the devices, the whole eco-system needs to be
+          standardize to allow seamless composition between smart objects
+
+    User point of view:
+        > new always responsive services
+        > shifting from always on service to always responsive service. Rather than having people to look
+          for information online, IoT can actually provide more service to handle execution details in 
+          people's daily life.
+        > IoT will build on existing technology such as sensor networks and service-oriented architectures.
+
+    IoT System level features:
+        > Device heterogeneity
+            -> The management of such a high level of heterogeneity shall be supported at both architectural 
+               and protocol level.
+        > Scalability
+            -> naming and addressing (small system)
+            -> data communication and networking (high level of interconnection)
+            -> information and knowledge management
+            -> service management (large number of services)
+            -> Ubiquitous wireless communication (spectrum availibility)
+            -> Energy-optimized solutions
+            -> Localization and tracking capabilities (know where each object is)
+            -> Self organization capabilities (nodes need to automatically organize themselves to serve under
+               different situation)
+        > Semantic interoperability and data management
+            -> providing data with standardized format and semantic description of the content.
+        > Embedded Security and privacy-preserving mechanisms
+            -> Security mechanism should be designed along with the architecture
+
+
+3. Research Context
+-------------------
+    Here we look at the relevant research field which will assist the development of IoTs.
+        
+    > 3 limiting factor of self-organization capability
+        -> support of heterogeneous devices, 
+            * unlike sensor network where each sensor process data with common characteristics. 
+              Also, we need to put less unnecessary burden on the device, such as a full 
+              protocol stack
+        -> Energy efficiency, 
+        -> number of electronics can be embedded in an IoT object. (we might need more than what
+           we can do by far)
+
+    > RFID
+        -> Its usage is still limited, they are primarily used in isolated and vertically integrated systems.
+
+    > Ambient Intelligence
+        -> embedding of computational devices into the environment
+        -> builds upon ubiquitous computing concept
+        -> have been mainly developed for "closed" environments
+        -> IoT expends AmI to open scenarios
+            * services can be added at run-time rather than design time
+
+    > Standardizing heterogeneity
+        -> standard virtual platform in all network devices
+        -> Frameworks based on mobile agents (not very 靠谱)
+    
+    > IoT architecture needs to understand context
+        -> Schilit's active map system
+        -> self-adaptive situated service (not good enough)
+        -> we need design patterns that can be used to augment end-user applications with self-adaptive properties.
+            * discovering, deploying and composing services at run-time
+            * supporting autonomicity within all phases of the service life-cycle.
+    
+    > frameworks for developing IoT applications
+        -> Service-oriented computing
+            * distributed architecture
+            * entities can be accessed via standard interfaces
+            * currently a lot of them use web-based protocols
+            * current setup is too heavy weight for IoT
+
+        -> Service-oriented architecture
+            * a collection of services can communicate with each other via standardized interaction pattern
+         
+4. Research Challenges (Unfinished)
+----------------------
+    > Identification:
+        can be done in two ways:
+        ->  physical tag, such as RFID or QR code, require a global database of IDs
+        ->  embed description unit into object, does not require global database, however
+            need to embed more electronic into it.
+
+    > Sensing:
+        -> instead of being designed a single task object, we need object themselves embed meaning for
+           sensing the local environments and act on it.
+    
+    > Computing, communication and identification technologies:
+        need for an architecture supporting low-power, low-cost and yet fully networked and integrated 
+        devices fully compatible with standard communication technologies.
+        -> Computing:
+            * low power computing
+            * power saving protocol
+            * power saving vs latency
+            * innovated energy harvesting
+        -> communication
+            * in-networking
+        -> ID
+            * passive, RFID tag, 
+            * active tag has on-board power source for on-board receiver and transmitter.
+
+
+
+
+5. Security
+-----------
+    > Data Confidentiality
+        -> access control mechanism
+            * role based access control, access right can be modified dynamically
+            * access control techniques should be integrated with data streams management system
+                - protect during transmission
+                - access control
+                    B. Carminati, E. Ferrari, K. Tan, Enforcing access control policies on data streams
+
+        -> object authentication process
+            * hop-by-hop encrypted data aggregation
+                - encrypted by the sensing nodes and decrypted by the aggregator nodes
+                - vulnerable because the intermediate aggregator nodes are easy to tamper and the 
+                  sensor readings are decrypted on those aggregators.
+            * end to end encrypted data aggregation
+                - intermediate aggregator does not decrypt data
+                - whole network is compromised in case the key is compromised in a sensing nodes.
+
+        -> device identity management
+            * reach an agreement on the concept of identity
+                - federation: a set of organizations that establish trust relationships with respect 
+                  to the identity information maintained.
+                    + both identity providers and service providers
+
+            * Identity Management System
+                - identity providers
+                    + authentication of entities
+                    + Authenticate entities using signle-sign-on (SSO) technology
+                - service providers
+                    + offer services to users that satisfy the policy requirements 
+                    + specifies and enforces the access control policies
+
+    > Privacy
+        In fact, wireless channel increases the risk of vio- lation due to the remote access capabilities
+        which potentially expose the system to eavesdropping and masking attacks
+
+        Privacy issue needs to be considered during the system design phase.
+        Challenges:
+            > definition of a general model for privacy in IoT
+            > Development of innovative enforcement techniques, able to support the scale and heterogeneity
+              characterizing IoT scenarios
+            > balances the need of anonymity presented by some applications with the localization and tracking 
+               requirements of some other ones.
+        
+
+    > Trust
+        Trust negotiation refers to the process of credential exchanges that allows a party requiring a service or 
+        a resource from another party to provide the necessary credentials in order to obtain the ser- vice or 
+        the resource.
+
+        The ability to meet the trust requirement is indeed strictly related to the identity management and access 
+        control issues
+
+        Issues to be address for developing trust services:
+            -> The globally accepted certification authorities should be addressed 
+            -> A language to simplify credential specifications and to express a wide range of protection requirements
+            -> idefinition of an effective model of trust should account for both the highly distributed nature of 
+               the IoT as well as for the requirements.
