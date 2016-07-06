@@ -1,0 +1,33 @@
+Transport layer uses the network:
+
+It is a layer where we don't depend on devices anymore
+    > Segments carry application data across the network
+
+Transport layer Services
+    > Provide different kinds of data delivery across the network to applications
+    > UDP (unreliable, Datagrams)
+    > TCP (reliable, Streams)
+
+Comparison of Internet Transports
+    > TCP is full-featured, UDP is a glorified packet
+
+Socket API
+    > the "network" API are used to write all internet apps
+    > Supports both internet transport services (streams and datagrams)
+    > sockets let apps attach to the local network at different ports
+    > Streams:
+        -> Listen
+        -> Accept
+        -> Connect
+    > Datagram:
+        -> Send (To)
+        -> Receive (From)
+
+Ports: 
+    > Application process is identified by the tuple IP address, protocol, and port
+        -> Ports are 16-bit integers representing local "local mailboxes" that process leases
+    > Servers often bind to "well known ports"
+        -> blow 1024
+    > Client often assigned "ephemeral" ports
+
+

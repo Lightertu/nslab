@@ -1,0 +1,14 @@
+Bandwidth allocation
+TCP uses AIMD
+
+Bandwidth Allocation Model
+    > Network layer returns feedback on current allocation  to senders
+        -> Network layer returns feedback on current allocation  to senders
+    > Transport layer adjusts sender's behavior via windows in response
+        -> How senders adapt is control law
+
+AIMD (Control Law)
+    > AIMD is a control law hosts can use to reach a good allocation
+
+TCP Uses AIMD
+

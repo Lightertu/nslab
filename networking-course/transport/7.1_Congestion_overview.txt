@@ -1,0 +1,21 @@
+Congestion is like a traffic jam
+
+Nature of Congestion
+    > Routers have internel buffer for contention
+    > queues help by absorbing bursts when input > output rate
+    > but if input > output all the time queue will overflow
+        -> This is congestion
+    > Congestion is functionof traffic pattern
+
+Bandwidth Allocation:
+    > important task for network is to allocate its capacity to sender
+    > Efficient means most capacity is used but there is no congestion
+    > Fair means every sender gets a resonable share the network.
+
+    > Key observation:
+        -> in an effective solution, transport and network layers much work together
+    > Network layer witness congestion
+        -> only it can provide direct feedback
+    > Transport layer caouses congestion
+        -> Only it can reduce offered load
+
