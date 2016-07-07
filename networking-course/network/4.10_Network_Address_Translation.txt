@@ -1,0 +1,51 @@
+Network Address Translation
+
+What is NAT?
+    > connect home network to the internet
+
+Middleboxes
+    > Sit "inside the network" but perform "more than IP" processing on the packets to add new functionlity
+        -> NAT box, firewall / Intrusion detection system
+
+    > Advantages:
+        -> A possible rapid deployment path when there no other option
+        -> Control over many hosts (IT)
+    > Disadvantages:
+        -> Breaking layering model, interferes with connectivity, strange side effects
+        -> Poor vantage, point for many task
+
+NAT Box:
+    > NAT box connects an internal network to an external network
+        -> Many internal hosts are connected using few external addresses
+        -> Middlebox that "translates addresses"
+
+    > Motivated by IP address scarcity
+        -> controversial at first, now accepted
+
+NAT:
+    > Common scenario:
+        -> Home computers use "private" IP addresses
+        -> NAT connects home to ISP using a single external IP addresses
+
+How NAT works
+    > Keeps an internal / external table
+        -> Typically uses IP address + TCP port
+        -> This is address and port translation
+    > Need ports to ma mapping 1-1 since there are fewer external IPS 
+    > INternel  ->  External
+
+NAT Downsides
+    > Connectivity has been broken
+        -> Can only send incomming packets after an outgoing connection is setup
+        -> Difficult to run servers or peer to peer apps at home
+    > does not work so well when there are no connections (UDP apps)
+    > Break apps that unwisely expose their IP addresses (FTP)
+
+NAT Upsides
+    > Relieves much IP address pressure 
+        -> Many home hosts behind NATs
+    > Easy to depoly 
+        -> Rapidly and by your alone
+    > Useful functionality
+        -> Firewall, helps with privacy
+

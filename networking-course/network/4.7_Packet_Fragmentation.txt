@@ -1,0 +1,40 @@
+Packet size Problems:
+    > different networks have different packet sizes
+
+Prefer large packets for efficiency
+    > What size is too large?
+    > Difficult because node does not know newwork path
+
+Packet Size Solutions:
+    > Fragmentation (now)
+    > Discovery (next)
+
+IPv4 Fragmentation:
+    > Fragmentation happens at router, reassembling happens at host
+
+IPv4 Fragmentation Fields
+    > Identification
+    > Total Length field
+    > Fragment offset
+    > control bits
+    > MF (More Fragments)
+
+IPv4 Fragmentation Procedure
+    > Router splits a packet that is too large
+        -> Break into large pieces
+        -> Copy IP header to pieces
+        -> Adjust the length
+        -> Set offset to indicate position
+        -> Set MF on all pieces except last
+
+Receiving host reassembles the pieces:
+    > Identification and MF flag are used
+
+Path MTU Discovery:
+    > Discover the MTU that will fit
+    > Host tests path with large packet
+    > Path MTU depends on the path and so can change over time
+    > Implemented with ICMP 
+        -> set DF
+
+
