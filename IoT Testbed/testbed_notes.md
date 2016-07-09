@@ -10,7 +10,13 @@
 ## Components
 
 ## Technology
-    - MQTT and XMPP (most mobile phones support XMPP)
+    - Application Layer
+        - MQTT and XMPP (most mobile phones support XMPP)
+        - Constrained Application Protocol(CoAP)
+
+    - Network Layer
+        - 6LoWPAN (Low power wireless personal area network)
+
 
 ## Architecture Overview
     - Device Layer
