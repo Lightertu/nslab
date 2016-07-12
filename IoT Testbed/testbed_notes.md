@@ -1,4 +1,3 @@
-# Test Bed
 
 ## Goal
 ## Characteristics
@@ -8,7 +7,7 @@
     - Easy to scale
 
 ## Components
-
+    - framework: Kaa
 ## Technology
     - Application Layer
         - MQTT and XMPP (most mobile phones support XMPP)
