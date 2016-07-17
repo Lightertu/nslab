@@ -1,4 +1,3 @@
-
 ## Goal
 ## Characteristics
     - Support heterogeneity of devices
@@ -16,7 +15,6 @@
     - Network Layer
         - 6LoWPAN (Low power wireless personal area network)
 
-
 ## Architecture Overview
     - Device Layer
         - Sensor Nodes
@@ -25,3 +23,8 @@
     - Cloud Management layer
     - Application layer
 
+## Monday Presentation Prepare
+    - Read couple comparison paper to find out what other people are doing
+    - Prioitize the features we desire
+    - Find a list a IoT platforms we are interested
+    - Do an analysis on the platforms I found
