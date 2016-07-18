@@ -13,9 +13,6 @@
     - offers hardware or firmware for implementing a gateway for passive devices
     - support of protocols for constrained devices (MQTT, CoAP)
 
-* ~~security and privacy~~
-    -~~ Majority uses access key~~
-
 * Data procesing and sharing for supporting new services
     - Majority uses access key
     - Support for processing and sharing the data steams
@@ -26,12 +23,12 @@
     - Different programming language 
     - SDKs for developping applications
 
-* ~~The completeness of and IoT ecosystem~~
-    - ~~plateform shall attract the developers of add-ons and application~~
-
 * provisions for handling and processing data locally
 * uniform data models, data catalogs and edge analytics capabilities
     
+* ~~The completeness of and IoT ecosystem~~
+* ~~security and privacy~~
+
 ## A Good IoT Platform should have
 8 Offering streamline APIs
 
