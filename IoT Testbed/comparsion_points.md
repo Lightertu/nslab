@@ -6,6 +6,12 @@
     - Open source
 * Easy to configure
 * Easy to scale
+* Authority 
+    - good developers rep
+* popularity 
+    - good tutorials 
+* platform independent for research
+    - the diffculty of platform migration
 
 ## From Key Feature:
 * supporting herterogenous sensors
@@ -36,25 +42,25 @@
 ## A list of Open Source IoT Platforms
 * [Lelylan](http://www.lelylan.com/)
     - Incomplete Documentation
-* [Physical Web](https://google.github.io/physical-web/)
+* **[Physical Web](https://google.github.io/physical-web/)**
     - More for small scale IoT 
-* [Thing Speak](https://thingspeak.com/)
+* **[Thing Speak](https://thingspeak.com/)**
     - Very friendly to use by there is no support for different protocols
 * [Bug Labs](http://buglabs.net/)
     - Cannot find documentation
-* [The Thing System](http://thethingsystem.com/)
+* **[The Thing System](http://thethingsystem.com/)**
     - very good support for commercial IoT hardware
     - Designed for easy of use, but show no sign of flexibility
 * [Open Remote](http://www.openremote.com/)
     - More of a Platform as service model, show no sign of flexibility
-* [Zetta](http://www.zettajs.org/)
+* **[Zetta](http://www.zettajs.org/)**
     - Easy to implement
     - Good amount of user base
     - Many modules are availible.
     - Node.js has a steep learning curve
     - Not too flexible.
 
-* [Kaa](http://www.kaaproject.org/)
+* **[Kaa](http://www.kaaproject.org/)**
     - Support all the key features
     - Designed for a large scale system
     - Different programming languages to choose from
@@ -63,3 +69,7 @@
     - contains device dependent SDK in C, can run without operating system.
     - Gateway implemetation support
 
+
+## Matrice
+* Ease to include attackers
+* least efforts to success
